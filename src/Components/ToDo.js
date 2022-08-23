@@ -1,6 +1,6 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 const ToDo = ({ toDo, markComplete, setUpdateData, deleteTask }) => {
     return (
@@ -25,11 +25,7 @@ const ToDo = ({ toDo, markComplete, setUpdateData, deleteTask }) => {
 
                                     {task.status ? null : (
                                         <span title='Edit'
-                                            onClick={() => setUpdateData({
-                                                id: task.id,
-                                                title: task.title,
-                                                status: task.status ? true : false
-                                            })}
+                                            onClick={() => setUpdateData(task)}
                                         >
                                             <FontAwesomeIcon icon={faPen} />
                                         </span>

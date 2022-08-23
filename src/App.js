@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import AddTaskForm from './Components/AddTaskForm';
-import ToDo from './Components/ToDo';
+import { useState } from 'react'
+import AddTaskForm from './Components/AddTaskForm'
+import ToDo from './Components/ToDo'
 import UpdateForm from './Components/UpdateForm'
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import './App.css'
 
 function App() {
 
@@ -11,63 +11,60 @@ function App() {
   const [toDo, setToDo] = useState([
     { id: 1, title: 'Task 1', status: false },
     { id: 2, title: 'Task 2', status: false }
-  ]);
+  ])
 
   // *** Temp State
   // holds temp data that will be added as new task list
-  const [newTask, setNewTask] = useState('');
+  const [newTask, setNewTask] = useState('')
 
   // holds the task that is being edited
-  const [updateData, setUpdateData] = useState('');
+  const [updateData, setUpdateData] = useState('')
 
   // Add Task
   const addTask = () => {
     if (newTask) {
-      let num = toDo.length + 1;
-      let newEntry = { id: num, title: newTask, status: false }
-      setToDo([...toDo, newEntry])
-      setNewTask('');
+      let num = toDo.length + 1
+      setToDo([
+        ...toDo,
+        { id: num, title: newTask, status: false }
+      ])
+      setNewTask('')
     }
   }
 
   // Delete Task
   const deleteTask = (id) => {
-    let newTasks = toDo.filter(task => task.id !== id)
-    setToDo(newTasks)
+    setToDo(toDo.filter(task => task.id !== id))
   }
 
   // Complete Task
   const markComplete = (id) => {
-    let newTask = toDo.map(task => {
-      if (task.id === id) {
-        return ({ ...task, status: !task.status })
-      }
-      return task;
-    })
-    setToDo(newTask)
+    setToDo(toDo.map(task => task.id === id ? ({ ...task, status: !task.status }) : (task)
+    ))
   }
 
   // Cancel Edit
   const cancelUpdate = (id) => {
-    setUpdateData('');
+    setUpdateData('')
   }
 
   // Change Task
-  const changeTask = (e) => {
-    let newEntry = {
-      id: updateData.id,
-      title: e.target.value,
-      status: updateData.status ? true : false
-    }
-    setUpdateData(newEntry);
+  const changeHolder = (e) => {
+    setUpdateData({
+      ...updateData,
+      title: e.target.value
+    })
   }
 
   // Update Task
   const updateTask = () => {
-    let filterRecords = [...toDo].filter(task => task.id !== updateData.id);
-    let updatedObject = [...filterRecords, updateData]
-    setToDo(updatedObject);
-    setUpdateData('');
+    let removeOldRecord = [...toDo].filter(task => task.id !== updateData.id)
+    setToDo([
+      ...removeOldRecord,
+      updateData
+    ])
+
+    setUpdateData('')
   }
 
   return (
@@ -78,7 +75,7 @@ function App() {
       {updateData && updateData ? (
         <UpdateForm
           updateData={updateData}
-          changeTask={changeTask}
+          changeHolder={changeHolder}
           updateTask={updateTask}
           cancelUpdate={cancelUpdate}
         />
@@ -102,4 +99,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

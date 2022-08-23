@@ -1,10 +1,15 @@
+body {
+  background-color: #333;
+  color: #fff;
+}
+
 .App {
   text-align: center;
 }
 
 .taskBg {
-  background-color: beige;
-  border-radius: 4px;
+  background-color: #555;
+  border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px 140px 10px 15px;
   text-align: left;
@@ -51,15 +56,19 @@
 
 .taskBg .iconsWrap span {
   display: inline-block;
-  margin: 0px 10px 0px 10px;
+  margin: 0px 10px 0 10px;
   cursor: pointer;
-  color: coral;
+  color: #00ff89;
 }
 
 .taskBg .iconsWrap span:hover {
-  color: rgb(138, 233, 233);
+  color: yellow;
 }
 
 .mr-20 {
-  margin: 10px;
+  margin-right: 20px;
+}
+
+.col {
+  margin-bottom: 20px;
 }
