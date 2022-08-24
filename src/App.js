@@ -1,4 +1,4 @@
-// Project inspiration from https://github.com/webstylepress/To-Do-List-App-React-V2-
+// Project inspiration from https://www.youtube.com/watch?v=TmDNBEdHzVs&ab_channel=WebStylePress
 import { useState } from 'react'
 import AddTaskForm from './Components/AddTaskForm'
 import ToDo from './Components/ToDo'
@@ -72,7 +72,7 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        <h1>To Do List App</h1>
+        <h1>To Do List</h1>
 
         {/* Update Task */}
         {updateData && updateData ? (
