@@ -1,4 +1,11 @@
 const AddTaskForm = ({ newTask, setNewTask, addTask }) => {
+
+    const handleKeyDown = e => {
+        if (e.key === 'Enter') {
+            addTask()
+        }
+    }
+
     return (
         <>
             <div className='row'>
@@ -6,13 +13,14 @@ const AddTaskForm = ({ newTask, setNewTask, addTask }) => {
                     <input
                         value={newTask}
                         onChange={(e) => setNewTask(e.target.value)}
+                        onKeyDown={handleKeyDown}
                         className='form-control form-control-lg'
                     />
                 </div>
                 <div className='col-auto'>
                     <button
                         onClick={addTask}
-                        className='btn btn-lg btn-success'
+                        className='btn btn-lg btn-info'
                     >Add Task</button>
                 </div>
             </div>

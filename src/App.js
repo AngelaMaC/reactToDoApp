@@ -1,3 +1,4 @@
+// Project inspiration from https://github.com/webstylepress/To-Do-List-App-React-V2-
 import { useState } from 'react'
 import AddTaskForm from './Components/AddTaskForm'
 import ToDo from './Components/ToDo'
@@ -41,6 +42,7 @@ function App() {
   const markComplete = (id) => {
     setToDo(toDo.map(task => task.id === id ? ({ ...task, status: !task.status }) : (task)
     ))
+    setUpdateData('')
   }
 
   // Cancel Edit
@@ -68,33 +70,35 @@ function App() {
   }
 
   return (
-    <div className="container App">
-      <h1>To Do List App</h1>
+    <div className="App">
+      <div className='container'>
+        <h1>To Do List App</h1>
 
-      {/* Update Task */}
-      {updateData && updateData ? (
-        <UpdateForm
-          updateData={updateData}
-          changeHolder={changeHolder}
-          updateTask={updateTask}
-          cancelUpdate={cancelUpdate}
-        />
-      ) : (
-        <AddTaskForm
-          newTask={newTask}
-          setNewTask={setNewTask}
-          addTask={addTask}
-        />
-      )}
+        {/* Update Task */}
+        {updateData && updateData ? (
+          <UpdateForm
+            updateData={updateData}
+            changeHolder={changeHolder}
+            updateTask={updateTask}
+            cancelUpdate={cancelUpdate}
+          />
+        ) : (
+          <AddTaskForm
+            newTask={newTask}
+            setNewTask={setNewTask}
+            addTask={addTask}
+          />
+        )}
 
-      {/* Display ToDos */}
-      {toDo && toDo.length ? '' : 'Add some tasks...'}
-      <ToDo
-        toDo={toDo}
-        markComplete={markComplete}
-        setUpdateData={setUpdateData}
-        deleteTask={deleteTask}
-      />
+        {/* Display ToDos */}
+        {toDo && toDo.length ? '' : 'Add some tasks...'}
+        <ToDo
+          toDo={toDo}
+          markComplete={markComplete}
+          setUpdateData={setUpdateData}
+          deleteTask={deleteTask}
+        />
+      </div>
     </div>
   );
 }

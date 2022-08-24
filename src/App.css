@@ -1,14 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background-color: #333;
-  color: #fff;
+  background-color: #64B6AC;
+  color: #5D737E;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 .App {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
   text-align: center;
+  margin: 40px 20px;
+  padding: 30px;
+  width: 90%;
+  height: auto;
+  background-color: #FCFFFD;
+  border-radius: 8px;
 }
 
 .taskBg {
-  background-color: #555;
+  background-color: #DAFFEF;
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px 140px 10px 15px;
@@ -23,14 +62,15 @@ body {
 }
 
 .taskNumber {
-  color: #999;
-  border: 1px solid #999;
+  color: #5D737E;
+  border: 1px solid #5D737E;
   border-radius: 50%;
   width: 26px;
   height: 26px;
   display: flex;
   text-align: center;
   font-size: 14px;
+  font-weight: 600;
   margin-right: 8px;
   align-items: center;
   justify-content: center;
@@ -58,11 +98,12 @@ body {
   display: inline-block;
   margin: 0px 10px 0 10px;
   cursor: pointer;
-  color: #00ff89;
+  color: #64B6AC;
 }
 
 .taskBg .iconsWrap span:hover {
-  color: yellow;
+  color: #F79824;
+  /* color: #5BC0DE; */
 }
 
 .mr-20 {
