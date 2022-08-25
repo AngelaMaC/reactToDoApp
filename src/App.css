@@ -114,3 +114,15 @@ select {
 .col {
   margin-bottom: 20px;
 }
+
+.source a {
+  color: #5BC0DE;
+}
+
+.source a:hover {
+  color: #F79824;
+}
+
+a:link {
+  text-decoration: none;
+}
