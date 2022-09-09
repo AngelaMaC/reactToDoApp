@@ -98,10 +98,10 @@ function App() {
           setUpdateData={setUpdateData}
           deleteTask={deleteTask}
         />
-        <footer className='source'>
-          <a href='https://github.com/AngelaMaC/reactToDoApp' target='blank' rel='noopener noreferrer'>View Source Code on github</a>
-        </footer>
       </div>
+      <footer className='source'>
+        <a href='https://github.com/AngelaMaC/reactToDoApp' target='blank' rel='noopener noreferrer'>View Source Code on github</a>
+      </footer>
     </div>
   );
 }

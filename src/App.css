@@ -11,13 +11,13 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  background-color: #64B6AC;
-  color: #5D737E;
+html {
+  color: #074F57;
 }
 
 body {
+  /* background-color: #40addf; */
+  background-color: #077187;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -33,22 +33,24 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   width: 100%;
+  padding: 20px;
 }
 
 .container {
   text-align: center;
-  margin: 40px 20px;
+  margin: 20px;
   padding: 30px;
-  width: 90%;
-  height: auto;
-  background-color: #FCFFFD;
+  max-width: 600px;
+  min-height: 500px;
+  background-color: #F1F9F5;
   border-radius: 8px;
 }
 
 .taskBg {
-  background-color: #DAFFEF;
+  background-color: #CFEBDF;
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px 140px 10px 15px;
@@ -63,8 +65,10 @@ select {
 }
 
 .taskNumber {
-  color: #5D737E;
-  border: 1px solid #5D737E;
+  color: #074F57;
+  border: 1px solid #074F57;
+  /* color: #5D737E;
+  border: 1px solid #5D737E; */
   border-radius: 50%;
   width: 26px;
   height: 26px;
@@ -79,6 +83,7 @@ select {
 
 .taskBg .taskText {
   flex: 1;
+  color: #074F57;
 }
 
 .taskBg .done .taskText {
@@ -103,8 +108,7 @@ select {
 }
 
 .taskBg .iconsWrap span:hover {
-  color: #F79824;
-  /* color: #5BC0DE; */
+  color: #E8998D;
 }
 
 .mr-20 {
@@ -116,11 +120,11 @@ select {
 }
 
 .source a {
-  color: #5BC0DE;
+  color: #e7f4f8;
 }
 
 .source a:hover {
-  color: #F79824;
+  color: #E8998D;
 }
 
 a:link {
